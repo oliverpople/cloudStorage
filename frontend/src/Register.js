@@ -72,11 +72,6 @@ class Register extends Component {
     }
   }
   render() {
-    // console.log("props",this.props);
-
-    var userhintText = "Enter your email";
-    var userLabel = "email";
-
     return (
       <div>
         <MuiThemeProvider>
@@ -99,8 +94,8 @@ class Register extends Component {
             />
             <br />
             <TextField
-              hintText={userhintText}
-              floatingLabelText={userLabel}
+              hintText="Enter your email"
+              floatingLabelText="email"
               onChange={(event, newValue) => this.setState({ email: newValue })}
             />
             <br />
