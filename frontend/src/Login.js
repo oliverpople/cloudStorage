@@ -47,47 +47,10 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      menuValue: 1,
       loginComponent: localloginComponent
     };
   }
-  componentWillMount() {
-    // console.log("willmount prop values",this.props);
-    var localloginComponent = [];
-    localloginComponent.push(
-      <MuiThemeProvider key={"local-login-Component"}>
-        <div>
-          <TextField
-            hintText="Enter your Email"
-            floatingLabelText="email"
-            onChange={(event, newValue) =>
-              this.setState({ username: newValue })
-            }
-          />
-          <br />
-          <TextField
-            type="password"
-            hintText="Enter your Password"
-            floatingLabelText="Password"
-            onChange={(event, newValue) =>
-              this.setState({ password: newValue })
-            }
-          />
-          <br />
-          <RaisedButton
-            label="Submit"
-            primary={true}
-            style={style}
-            onClick={event => this.handleClick(event)}
-          />
-        </div>
-      </MuiThemeProvider>
-    );
-    this.setState({
-      menuValue: 1,
-      loginComponent: localloginComponent
-    });
-  }
+
   handleClick(event) {
     var self = this;
     var payload = {
