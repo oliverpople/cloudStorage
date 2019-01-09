@@ -7,12 +7,14 @@ import LoginScreen from "./Loginscreen";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentScreen: [] };
+    this.state = {};
   }
-  componentDidMount() {
-    var currentScreen = [];
-    currentScreen.push(<UploadScreen appContext={this.props.appContext} />);
-    this.setState({ currentScreen });
+
+  handleLogout(event) {
+    // console.log("logout event fired",this.props);
+    var loginPage = [];
+    loginPage.push(<LoginScreen appContext={this.props.appContext} />);
+    this.props.appContext.setState({ loginPage: loginPage, uploadScreen: [] });
   }
 
   render() {
