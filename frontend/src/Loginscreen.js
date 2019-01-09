@@ -14,7 +14,7 @@ class Loginscreen extends Component {
     super(props);
     var loginButtons = [];
     loginButtons.push(
-      <div>
+      <div key={"register-buttin"}>
         <MuiThemeProvider>
           <div>
             <RaisedButton
@@ -40,7 +40,11 @@ class Loginscreen extends Component {
   componentWillMount() {
     var loginscreen = [];
     loginscreen.push(
-      <Login parentContext={this} appContext={this.props.appContext} />
+      <Login
+        key={"Login-component"}
+        parentContext={this}
+        appContext={this.props.appContext}
+      />
     );
     var loginmessage = "Not registered yet, Register Now";
     this.setState({
@@ -54,7 +58,11 @@ class Loginscreen extends Component {
     if (this.state.isLogin) {
       let loginscreen = [];
       loginscreen.push(
-        <Register parentContext={this} appContext={this.props.appContext} />
+        <Register
+          key={"register-component"}
+          parentContext={this}
+          appContext={this.props.appContext}
+        />
       );
       loginmessage = "Already registered. Go to Login";
       let loginButtons = [];
@@ -82,7 +90,7 @@ class Loginscreen extends Component {
       let loginscreen = [],
         loginButtons = [];
       loginButtons.push(
-        <div>
+        <div key={"register-button"}>
           <MuiThemeProvider>
             <div>
               <RaisedButton
@@ -96,7 +104,11 @@ class Loginscreen extends Component {
         </div>
       );
       loginscreen.push(
-        <Login parentContext={this} appContext={this.props.appContext} />
+        <Login
+          key={"login-component"}
+          parentContext={this}
+          appContext={this.props.appContext}
+        />
       );
       loginmessage = "Not Registered yet.Go to registration";
       this.setState({

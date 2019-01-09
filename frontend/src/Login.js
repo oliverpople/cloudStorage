@@ -3,20 +3,23 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
-import DropDownMenu from "material-ui/DropDownMenu";
-import MenuItem from "material-ui/MenuItem";
 var apiBaseUrl = "http://localhost:4000/api/";
 import axios from "axios";
 import DataDiscoveryPage from "./DataDiscoveryPage";
+
+const style = {
+  margin: 15
+};
+
 class Login extends Component {
   constructor(props) {
     super(props);
     var localloginComponent = [];
     localloginComponent.push(
-      <MuiThemeProvider>
+      <MuiThemeProvider key={"local-login-Component"}>
         <div>
           <TextField
-            hintText="Enter your College Rollno"
+            hintText="Enter your Email"
             floatingLabelText="Email"
             onChange={(event, newValue) =>
               this.setState({ username: newValue })
@@ -52,7 +55,7 @@ class Login extends Component {
     // console.log("willmount prop values",this.props);
     var localloginComponent = [];
     localloginComponent.push(
-      <MuiThemeProvider>
+      <MuiThemeProvider key={"local-login-Component"}>
         <div>
           <TextField
             hintText="Enter your Email"
@@ -95,17 +98,20 @@ class Login extends Component {
       .post(apiBaseUrl + "login", payload)
       .then(function(response) {
         console.log(response);
-        if (response.data.code == 200) {
+        if (response.data.code === 200) {
           console.log("Login successfull");
           var uploadScreen = [];
           uploadScreen.push(
-            <DataDiscoveryPage appContext={self.props.appContext} />
+            <DataDiscoveryPage
+              key={"Data-Discovery-Page"}
+              appContext={self.props.appContext}
+            />
           );
           self.props.appContext.setState({
             loginPage: [],
             uploadScreen: uploadScreen
           });
-        } else if (response.data.code == 204) {
+        } else if (response.data.code === 204) {
           console.log("Username password do not match");
           alert(response.data.success);
         } else {
@@ -133,9 +139,5 @@ class Login extends Component {
     );
   }
 }
-
-const style = {
-  margin: 15
-};
 
 export default Login;

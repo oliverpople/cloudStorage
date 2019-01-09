@@ -6,6 +6,10 @@ import TextField from "material-ui/TextField";
 import axios from "axios";
 import Login from "./Login";
 
+const style = {
+  margin: 15
+};
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -117,9 +121,5 @@ class Register extends Component {
     );
   }
 }
-
-const style = {
-  margin: 15
-};
 
 export default Register;

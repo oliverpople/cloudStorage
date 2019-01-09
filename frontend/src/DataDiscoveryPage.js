@@ -12,7 +12,9 @@ class App extends Component {
   handleLogout(event) {
     // console.log("logout event fired",this.props);
     var loginPage = [];
-    loginPage.push(<LoginScreen appContext={this.props.appContext} />);
+    loginPage.push(
+      <LoginScreen key={"login-screen"} appContext={this.props.appContext} />
+    );
     this.props.appContext.setState({ loginPage: loginPage, uploadScreen: [] });
   }
 
