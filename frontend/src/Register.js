@@ -48,7 +48,7 @@ class Register extends Component {
             var loginscreen = [];
             loginscreen.push(
               <Login
-                key={"login-component"}
+                key="login-component"
                 parentContext={this}
                 appContext={self.props.appContext}
               />

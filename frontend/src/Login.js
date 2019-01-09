@@ -35,7 +35,7 @@ class Login extends Component {
           var uploadScreen = [];
           uploadScreen.push(
             <DataDiscoveryPage
-              key={"Data-Discovery-Page"}
+              key="Data-Discovery-Page"
               appContext={self.props.appContext}
             />
           );
@@ -61,7 +61,7 @@ class Login extends Component {
         <MuiThemeProvider>
           <AppBar title="Login" />
         </MuiThemeProvider>
-        <MuiThemeProvider key={"local-login-Component"}>
+        <MuiThemeProvider key="local-login-Component">
           <div>
             <TextField
               hintText="Enter your Email"

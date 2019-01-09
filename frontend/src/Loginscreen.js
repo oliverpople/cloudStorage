@@ -13,7 +13,7 @@ class Loginscreen extends Component {
     super(props);
     var loginButtons = [];
     loginButtons.push(
-      <div key={"register-button"}>
+      <div key="register-button">
         <MuiThemeProvider>
           <div>
             <RaisedButton
@@ -40,7 +40,7 @@ class Loginscreen extends Component {
     var loginscreen = [];
     loginscreen.push(
       <Login
-        key={"login-component"}
+        key="login-component"
         parentContext={this}
         appContext={this.props.appContext}
       />
@@ -59,7 +59,7 @@ class Loginscreen extends Component {
       let loginscreen = [];
       loginscreen.push(
         <Register
-          key={"register-component"}
+          key="register-component"
           parentContext={this}
           appContext={this.props.appContext}
         />
@@ -90,7 +90,7 @@ class Loginscreen extends Component {
       let loginscreen = [],
         loginButtons = [];
       loginButtons.push(
-        <div key={"register-button"}>
+        <div key="register-button">
           <MuiThemeProvider>
             <div>
               <RaisedButton
@@ -105,7 +105,7 @@ class Loginscreen extends Component {
       );
       loginscreen.push(
         <Login
-          key={"login-component"}
+          key="login-component"
           parentContext={this}
           appContext={this.props.appContext}
         />
