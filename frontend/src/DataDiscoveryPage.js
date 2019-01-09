@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
-import LoginScreen from "./Loginscreen";
+// import LoginScreen from "./Loginscreen";
 
 class App extends Component {
   constructor(props) {
@@ -9,14 +9,13 @@ class App extends Component {
     this.state = {};
   }
 
-  handleLogout(event) {
-    // console.log("logout event fired",this.props);
-    var loginPage = [];
-    loginPage.push(
-      <LoginScreen key={"login-screen"} appContext={this.props.appContext} />
-    );
-    this.props.appContext.setState({ loginPage: loginPage, uploadScreen: [] });
-  }
+  // handleLogout(event) {
+  //   var loginPage = [];
+  //   loginPage.push(
+  //     <LoginScreen key={"login-screen"} appContext={this.props.appContext} />
+  //   );
+  //   this.props.appContext.setState({ loginPage: loginPage, uploadScreen: [] });
+  // }
 
   render() {
     return (

@@ -14,40 +14,9 @@ const style = {
 class Login extends Component {
   constructor(props) {
     super(props);
-    var localloginComponent = [];
-    localloginComponent.push(
-      <MuiThemeProvider key={"local-login-Component"}>
-        <div>
-          <TextField
-            hintText="Enter your Email"
-            floatingLabelText="Email"
-            onChange={(event, newValue) =>
-              this.setState({ username: newValue })
-            }
-          />
-          <br />
-          <TextField
-            type="password"
-            hintText="Enter your Password"
-            floatingLabelText="Password"
-            onChange={(event, newValue) =>
-              this.setState({ password: newValue })
-            }
-          />
-          <br />
-          <RaisedButton
-            label="Submit"
-            primary={true}
-            style={style}
-            onClick={event => this.handleClick(event)}
-          />
-        </div>
-      </MuiThemeProvider>
-    );
     this.state = {
       username: "",
-      password: "",
-      loginComponent: localloginComponent
+      password: ""
     };
   }
 
@@ -97,7 +66,33 @@ class Login extends Component {
             <p>Login as:</p>
           </div>
         </MuiThemeProvider>
-        {this.state.loginComponent}
+        <MuiThemeProvider key={"local-login-Component"}>
+          <div>
+            <TextField
+              hintText="Enter your Email"
+              floatingLabelText="Email"
+              onChange={(event, newValue) =>
+                this.setState({ username: newValue })
+              }
+            />
+            <br />
+            <TextField
+              type="password"
+              hintText="Enter your Password"
+              floatingLabelText="Password"
+              onChange={(event, newValue) =>
+                this.setState({ password: newValue })
+              }
+            />
+            <br />
+            <RaisedButton
+              label="Submit"
+              primary={true}
+              style={style}
+              onClick={event => this.handleClick(event)}
+            />
+          </div>
+        </MuiThemeProvider>
       </div>
     );
   }
