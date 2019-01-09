@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <MuiThemeProvider>
-          <AppBar title="Upload Page" />
+          <AppBar title="Data Discovery Page" />
         </MuiThemeProvider>
       </div>
     );
