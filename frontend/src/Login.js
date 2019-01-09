@@ -61,11 +61,6 @@ class Login extends Component {
         <MuiThemeProvider>
           <AppBar title="Login" />
         </MuiThemeProvider>
-        <MuiThemeProvider>
-          <div>
-            <p>Login as:</p>
-          </div>
-        </MuiThemeProvider>
         <MuiThemeProvider key={"local-login-Component"}>
           <div>
             <TextField

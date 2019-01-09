@@ -14,7 +14,7 @@ class Loginscreen extends Component {
     super(props);
     var loginButtons = [];
     loginButtons.push(
-      <div key={"register-buttin"}>
+      <div key={"register-button"}>
         <MuiThemeProvider>
           <div>
             <RaisedButton
@@ -41,17 +41,18 @@ class Loginscreen extends Component {
     var loginscreen = [];
     loginscreen.push(
       <Login
-        key={"Login-component"}
+        key={"login-component"}
         parentContext={this}
         appContext={this.props.appContext}
       />
     );
-    var loginmessage = "Not registered yet, Register Now";
+    var loginmessage = "Not registered yet? Register Now";
     this.setState({
       loginscreen: loginscreen,
       loginmessage: loginmessage
     });
   }
+
   handleClick(event) {
     console.log("event");
     var loginmessage;
@@ -64,7 +65,7 @@ class Loginscreen extends Component {
           appContext={this.props.appContext}
         />
       );
-      loginmessage = "Already registered. Go to Login";
+      loginmessage = "Already registered? Go to Login";
       let loginButtons = [];
       loginButtons.push(
         <div key="login-button">
@@ -110,7 +111,7 @@ class Loginscreen extends Component {
           appContext={this.props.appContext}
         />
       );
-      loginmessage = "Not Registered yet.Go to registration";
+      loginmessage = "Not Registered yet? Go to registration";
       this.setState({
         loginscreen: loginscreen,
         loginmessage: loginmessage,
@@ -119,6 +120,7 @@ class Loginscreen extends Component {
       });
     }
   }
+
   render() {
     return (
       <div className="loginscreen" key="loginscreen">
