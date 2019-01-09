@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
-import UploadScreen from "./UploadScreen";
 import LoginScreen from "./Loginscreen";
 
 class App extends Component {
