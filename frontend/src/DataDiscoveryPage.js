@@ -14,7 +14,7 @@ class App extends Component {
   //   loginPage.push(
   //     <LoginScreen key={"login-screen"} appContext={this.props.appContext} />
   //   );
-  //   this.props.appContext.setState({ loginPage: loginPage, uploadScreen: [] });
+  //   this.props.appContext.setState({ loginPage: loginPage, dataScreen: [] });
   // }
 
   render() {

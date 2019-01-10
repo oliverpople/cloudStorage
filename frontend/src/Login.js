@@ -32,8 +32,8 @@ class Login extends Component {
         console.log(response);
         if (response.data.code === 200) {
           console.log("Login successfull");
-          var uploadScreen = [];
-          uploadScreen.push(
+          var dataScreen = [];
+          dataScreen.push(
             <DataDiscoveryPage
               key="Data-Discovery-Page"
               appContext={self.props.appContext}
@@ -41,7 +41,7 @@ class Login extends Component {
           );
           self.props.appContext.setState({
             loginPage: [],
-            uploadScreen: uploadScreen
+            dataScreen: dataScreen
           });
         } else if (response.data.code === 204) {
           console.log("Username password do not match");

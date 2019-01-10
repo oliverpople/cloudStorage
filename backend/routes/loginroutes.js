@@ -1,5 +1,4 @@
 var mysql = require("mysql");
-// var bcrypt = require('bcrypt');
 var jsonfile = require("jsonfile");
 var connection = mysql.createConnection({
   host: "localhost",
@@ -17,9 +16,7 @@ connection.connect(function(err) {
 });
 
 exports.register = function(req, res) {
-  // console.log("req",req.body);
   var today = new Date();
-  // bcrypt.hash(req.body.password, 5, function( err, bcryptedPassword) {
   //save to db
   var users = {
     username: req.body.username,
@@ -39,14 +36,12 @@ exports.register = function(req, res) {
         failed: "error ocurred"
       });
     } else {
-      //  console.log('The solution is: ', results);
       res.send({
         code: 200,
         success: "user registered sucessfully"
       });
     }
   });
-  // });
 };
 
 exports.login = function(req, res) {
