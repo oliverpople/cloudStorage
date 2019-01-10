@@ -22,9 +22,7 @@ exports.register = function(req, res) {
   // bcrypt.hash(req.body.password, 5, function( err, bcryptedPassword) {
   //save to db
   var users = {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
     created: today,
     modified: today
@@ -52,48 +50,48 @@ exports.register = function(req, res) {
 };
 
 exports.login = function(req, res) {
-  var email = req.body.email;
+  var username = req.body.username;
   var password = req.body.password;
-  connection.query("SELECT * FROM users WHERE email = ?", [email], function(
-    error,
-    results,
-    fields
-  ) {
-    if (error) {
-      console.log("error ocurred", error);
-      res.send({
-        code: 400,
-        failed: "error ocurred"
-      });
-    } else {
-      if (results.length > 0) {
-        if (results[0].password == req.body.password) {
-          var file = "./userdata/email.json";
-          var obj = { email: req.body.email };
-          jsonfile.writeFile(file, obj, function(err) {
-            if (err) {
-              console.log(
-                "Error ocurred in writing json during login at login handler in login routes",
-                err
-              );
-            }
-          });
-          res.send({
-            code: 200,
-            success: "login sucessfull"
-          });
+  connection.query(
+    "SELECT * FROM users WHERE username = ?",
+    [username],
+    function(error, results, fields) {
+      if (error) {
+        console.log("error ocurred", error);
+        res.send({
+          code: 400,
+          failed: "error ocurred"
+        });
+      } else {
+        if (results.length > 0) {
+          if (results[0].password == req.body.password) {
+            var file = "./userdata/username.json";
+            var obj = { username: req.body.username };
+            jsonfile.writeFile(file, obj, function(err) {
+              if (err) {
+                console.log(
+                  "Error ocurred in writing json during login at login handler in login routes",
+                  err
+                );
+              }
+            });
+            res.send({
+              code: 200,
+              success: "login sucessfull"
+            });
+          } else {
+            res.send({
+              code: 204,
+              success: "username and password does not match"
+            });
+          }
         } else {
           res.send({
             code: 204,
-            success: "Email and password does not match"
+            success: "username does not exits"
           });
         }
-      } else {
-        res.send({
-          code: 204,
-          success: "Email does not exits"
-        });
       }
     }
-  });
+  );
 };

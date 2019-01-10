@@ -97,8 +97,8 @@ class Loginscreen extends Component {
   }
 
   notLoggedIn(event) {
-    let loginscreen = [],
-      loginButtons = [];
+    let loginscreen = [];
+    let loginButtons = [];
     loginButtons.push(
       <div key="register-button">
         <MuiThemeProvider>

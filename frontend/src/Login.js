@@ -23,7 +23,7 @@ class Login extends Component {
   handleClick(event) {
     var self = this;
     var payload = {
-      email: this.state.username,
+      username: this.state.username,
       password: this.state.password
     };
     axios
@@ -64,8 +64,8 @@ class Login extends Component {
         <MuiThemeProvider key="local-login-Component">
           <div>
             <TextField
-              hintText="Enter your Email"
-              floatingLabelText="Email"
+              hintText="Enter your username"
+              floatingLabelText="username"
               onChange={(event, newValue) =>
                 this.setState({ username: newValue })
               }
