@@ -18,13 +18,10 @@ class Register extends Component {
       password: ""
     };
   }
-  componentWillReceiveProps(nextProps) {
-    console.log("nextProps", nextProps);
-  }
+
   handleClick(event) {
     var apiBaseUrl = "http://localhost:4000/api/";
     var self = this;
-    //To be done:check for empty values before hitting submit
     if (this.state.username.length > 0 && this.state.password.length > 0) {
       var payload = {
         username: this.state.username,
