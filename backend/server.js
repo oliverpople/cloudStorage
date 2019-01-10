@@ -1,12 +1,6 @@
 var express = require("express");
 var login = require("./routes/loginroutes");
 var bodyParser = require("body-parser");
-/*
-Module:multer
-multer is middleware used to handle multipart form data
-*/
-var multer = require("multer");
-var multerupload = multer({ dest: "fileprint/" });
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -23,7 +17,7 @@ var router = express.Router();
 
 // test route
 router.get("/", function(req, res) {
-  res.json({ message: "welcome to our upload module apis" });
+  res.json({ message: "welcome to our apis" });
 });
 
 //route to handle user registration
