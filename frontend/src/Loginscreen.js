@@ -11,6 +11,29 @@ const style = {
 class Loginscreen extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      username: "",
+      password: "",
+      loginscreen: [],
+      loginmessage: "",
+      loginButtons: [],
+      registerbuttonLabel: "Register",
+      isLogin: true
+    };
+    this.isLoggedIn = this.isLoggedIn.bind(this);
+    this.notLoggedIn = this.notLoggedIn.bind(this);
+  }
+
+  componentWillMount() {
+    var loginscreen = [];
+    loginscreen.push(
+      <Login
+        key="login-component"
+        parentContext={this}
+        appContext={this.props.appContext}
+      />
+    );
+    var loginmessage = "Not registered yet? Register Now";
     var loginButtons = [];
     loginButtons.push(
       <div key="register-button">
@@ -26,31 +49,10 @@ class Loginscreen extends Component {
         </MuiThemeProvider>
       </div>
     );
-    this.state = {
-      username: "",
-      password: "",
-      loginscreen: [],
-      loginmessage: "",
-      loginButtons: loginButtons,
-      registerbuttonLabel: "Register",
-      isLogin: true
-    };
-    this.isLoggedIn = this.isLoggedIn.bind(this);
-    this.notLoggedIn = this.notLoggedIn.bind(this);
-  }
-  componentWillMount() {
-    var loginscreen = [];
-    loginscreen.push(
-      <Login
-        key="login-component"
-        parentContext={this}
-        appContext={this.props.appContext}
-      />
-    );
-    var loginmessage = "Not registered yet? Register Now";
     this.setState({
       loginscreen: loginscreen,
-      loginmessage: loginmessage
+      loginmessage: loginmessage,
+      loginButtons: loginButtons
     });
   }
 
